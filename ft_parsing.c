@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 18:22:09 by jhleena           #+#    #+#             */
-/*   Updated: 2021/01/27 17:30:25 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/01/30 15:45:28 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static int		ft_offset(char *string)
 	
 	count = 0;
 	while (*string >= '0' && *string <= '9')
+	{
 		count++;
+		string++;
+	}
 	return (count);
 }
 
@@ -26,14 +29,12 @@ static int		ft_flag(char **format, t_buffer *buf)
 {
 	if (**format == '0' || **format == '-')
 	{
-		//printf("ft_flag\n");
 		if (**format == '-')
 			buf->minus = 1;
 		buf->zero = 1;
 		(*format)++;
 		return (1);
 	}
-	//printf("meow\n");
 	return (0);
 }
 
@@ -84,10 +85,7 @@ void		ft_parsing(char **format, va_list arguments, t_buffer *buf)
 	while (**format)
 	{
 		if (ft_flag(format, buf))
-		{
-			printf("flag works correctly");
 			continue ;
-		}
 		if (ft_width(format, arguments, buf))
 			continue ;
 		if (ft_precision(format, arguments, buf))
