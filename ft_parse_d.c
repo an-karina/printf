@@ -30,10 +30,7 @@ void	ft_parse_d(char **format, va_list arguments, t_buffer *buf)
 	if ((buf->precision < 0) && !buf->minus && buf->zero)
 		am_zero = buf->width - len_num;
 	if ((buf->width > 0) && (buf->width > len_num) && (buf->precision < buf->width))
-	{
-			am_space = buf->width - len_num - am_zero;
-			//printf("meow\n");
-	}
+		am_space = buf->width - len_num - am_zero;
 	// if ((buf->precision >= 0) && (buf->precision > len_num) && (buf->width != -1) && (am_space))
 	// 	am_space = am_space - am_zero;
 	if (buf->minus)
@@ -42,7 +39,7 @@ void	ft_parse_d(char **format, va_list arguments, t_buffer *buf)
 		{
 			num *= -1;
 			write(1, "-", 1);
-			am_space--;
+			//am_space--;
 		}
 		while (am_zero--)
 			write(1, "0", 1);
