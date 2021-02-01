@@ -4,12 +4,50 @@
 int		main()
 {
 	char	*s = "fhvjfkv";
+	
+	//printf("|%11.10d|\n", -12);
+	//ft_printf("|%11.10d|\n", -12);
 
-	//printf("|%d|\n", 12);
-	//printf("|%010d|\n", 12);
-	//ft_printf("|%010d|\n", 12);
-	printf("|%-214748364.5d|\n", 12);
-	// ft_printf("|%-2147483647.5d|\n", 12);
-	//printf("|%10.5d|\n", 12);
+	// printf("|%15.10d|\n", -12);
+	// ft_printf("|%15.10d|\n", -12);
+
+	// printf("|%15.10d|\n", 12);
+	// ft_printf("|%15.10d|\n", 12);
+
+	// printf("|%15.d|\n", 12);
+	// ft_printf("|%15.d|\n", 12);
+
+	// printf("|%1.15d|\n", 12);
+	// ft_printf("|%1.15d|\n", 12);
+
+	// printf("|%1.1d|\n", 12);
+	// ft_printf("|%1.1d|\n", 12);
+
+	// printf("|%1d|\n", 12);
+	// ft_printf("|%1d|\n", 12);
+
+	// printf("|%1d|\n", -12);
+	// ft_printf("|%1d|\n", -12);
+
+
+	// printf("|%010d|\n", -12);
+	// ft_printf("|%010d|\n", -12);
+
+ 	// printf("|%-10d|\n", 12);
+	// ft_printf("|%-10d|\n", 12);
+
+
+ 	printf("|%-10d|\n", -12);
+	ft_printf("|%-10d|\n\n", -12);
+
+
+	printf("|%0-10d|\n", -12);
+	ft_printf("|%0-10d|\n\n", -12);
+
+	printf("|%010-d|\n", -12);
+	ft_printf("|%010-d|\n\n", -12);
+
+	printf("|%010.-d|\n", -12);
+	ft_printf("|%010.-d|\n\n", -12);
 return (0);
 }

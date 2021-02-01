@@ -18,10 +18,7 @@ int		ft_num_len(long num)
 	if (num == 0)
 		return (1);
 	if (num < 0)
-	{
 		num *= -1;
-		count++;
-	}
 	while (num > 0)
 	{
 		num /= 10;

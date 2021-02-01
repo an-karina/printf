@@ -23,16 +23,27 @@ void	ft_parse_d(char **format, va_list arguments, t_buffer *buf)
 	len_num =  ft_num_len((long)num);
 	am_zero = 0;
 	am_space = 0;
+	if (num < 0)
+		buf->width--;
 	if ((buf->precision >= 0) && (buf->precision > len_num))
 		am_zero = buf->precision - len_num;
 	if ((buf->precision < 0) && !buf->minus && buf->zero)
 		am_zero = buf->width - len_num;
 	if ((buf->width > 0) && (buf->width > len_num) && (buf->precision < buf->width))
-		am_space = buf->width - len_num - am_zero;
-	if ((buf->precision >= 0) && (buf->precision > len_num) && (buf->precision > buf->width) && buf->width != -1)
-		am_space = am_space - am_zero;
+	{
+			am_space = buf->width - len_num - am_zero;
+			//printf("meow\n");
+	}
+	// if ((buf->precision >= 0) && (buf->precision > len_num) && (buf->width != -1) && (am_space))
+	// 	am_space = am_space - am_zero;
 	if (buf->minus)
 	{
+		if (num < 0)
+		{
+			num *= -1;
+			write(1, "-", 1);
+			am_space--;
+		}
 		while (am_zero--)
 			write(1, "0", 1);
 		ft_putnbr_fd(num, 1);
@@ -43,47 +54,14 @@ void	ft_parse_d(char **format, va_list arguments, t_buffer *buf)
 	{		
 		while (am_space--)
 			write(1, " ", 1);
+		if (num < 0)
+		{
+			num *= -1;
+			write(1, "-", 1);
+		}
 		while (am_zero--)
 			write(1, "0", 1);
 		ft_putnbr_fd(num, 1);
 
 	}	
 }
-// 	if (buf->minus)
-// 	{
-// 		while (buf->precision >= 0 && buf->precision > len_num)
-// 		{
-// 			write(1, '0', 1);
-// 			len_num++;
-// 		}
-// 		ft_putnbr_fd(num, 1);
-// 		while (buf->width > buf->precision)
-// 		{
-// 			write(1, ' ', 1);
-// 			buf->precision++;
-// 		}
-// 	}
-// 	if (buf->zero && (buf->precision < 0))
-// 	{
-// 		while (buf->precision >= 0 && buf->width >= 0 && len_num < buf->width)
-// 		{
-// 			write(1, '0', 1);
-// 			len_num++;
-// 		}
-// 		ft_putnbr_fd(num, 1);
-// 	}
-// 	if (!(buf->minus) &&!(buf->zero))
-// 	{
-// 		while (buf->precision >= 0 && buf->width >= 0 && buf->width > buf->precision)
-// 		{
-// 			write(1, ' ', 1);
-// 			buf->width--;
-// 		}
-// 		while (buf->precision >= 0 && buf->width >= 0 && len_num < buf->precision)
-// 		{
-// 			write(1, '0', 1);
-// 			len_num++;
-// 		}
-// 		ft_putnbr_fd(num, 1);
-// 	}
-// }
