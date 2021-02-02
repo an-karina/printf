@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 18:22:09 by jhleena           #+#    #+#             */
-/*   Updated: 2021/01/30 15:45:28 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/02 13:57:06 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int		ft_offset(char *string)
 
 static int		ft_flag(char **format, t_buffer *buf)
 {
-	if (**format == 0)
+	if (**format == '0')
 	{
 		buf->zero = 1;
 		(*format)++;

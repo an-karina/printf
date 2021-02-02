@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 18:22:03 by jhleena           #+#    #+#             */
-/*   Updated: 2021/01/27 17:25:54 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/02 14:18:12 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ void	ft_parsing(char **format, va_list arguments, t_buffer *buf);
 void	ft_parse_type(char **format, va_list arguments, t_buffer *buf);
 int		ft_num_len(long num);
 void	ft_putnbr_fd(long n, int fd);
-void	ft_parse_d(char **format, va_list arguments, t_buffer *buf);
 int		ft_atoi(const char *str);
 char	*ft_strchr(const char *s, int c);
+void	ft_parse_d(char **format, va_list arguments, t_buffer *buf);
+void	ft_parse_c(char **format, va_list arguments, t_buffer *buf);
 
 #endif

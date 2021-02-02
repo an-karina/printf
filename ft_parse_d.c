@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 15:29:21 by jhleena           #+#    #+#             */
-/*   Updated: 2021/01/30 16:11:16 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/02 14:01:43 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,5 @@ void	ft_parse_d(char **format, va_list arguments, t_buffer *buf)
 		while (am_zero--)
 			write(1, "0", 1);
 		ft_putnbr_fd(num, 1);
-
-	}	
+	}
 }
