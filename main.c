@@ -4,7 +4,7 @@
 int		main()
 {
 	char	*s = "fhvjfkv";
-	
+	int p;
 	// printf("|%11.10d|\n", -12);
 	// ft_printf("|%11.10d|\n\n", -12);
 
@@ -59,8 +59,12 @@ int		main()
 	// printf("mine : |%d| |%.20d|\n", 2147483647, -2147483647 - 1);
  	// ft_printf("Karisha<3 : |%d| |%.20d|\n", 2147483647, -2147483647 - 1);
 
-	printf("|%0-10c|\n", 'a');
-	ft_printf("|%0-10c|\n", 'a');
+	// printf("|%-25p|\n", &p);
+	// ft_printf("|%-25p|\n\n", &p);
 
+	//ft_printf("|%s|\n", "\0");
+	//ft_printf("|%s|\n\n", 'a');
+
+	
 return (0);
 }

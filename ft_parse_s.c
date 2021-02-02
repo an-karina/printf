@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_c.c                                       :+:      :+:    :+:   */
+/*   ft_parse_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 14:02:24 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/02 15:19:40 by jhleena          ###   ########.fr       */
+/*   Created: 2021/02/02 14:27:53 by jhleena           #+#    #+#             */
+/*   Updated: 2021/02/02 18:11:19 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_parse_c(char **format, va_list arguments, t_buffer *buf)
+void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 {
-	char c;
+	char *str;
+	int	str_len;
 	int	am_zero;
 	int am_space;
+	int am_symb;
 	
-	c = va_arg(arguments, int);
+	str = va_arg(arguments, char *);
 	am_zero = 0;
 	am_space = 0;
-	if (buf->zero && !buf->minus && (buf->width > 0))
-		am_zero = --buf->width;
-	if ((!buf->zero) && (buf->width > 0))
-		am_space = --buf->width;
+	str_len = ft_strlen(str);
+	if ((buf->precision > 0) && (buf->precision < str_len))
+		str_len = buf->precision;
+	if ((buf->width > 0) && (buf->zero) && !(buf->minus))
+		am_zero = buf->width - str_len;
+	if ((buf->width > 0) && !(buf->zero))
+		am_space = buf->width - str_len;
 	if (buf->minus)
 	{
-		write(1, &c, 1);
+		while (str_len--)
+			write(1, str++, 1);
 		while (am_space--)
 			write(1, " ", 1);
 	}
@@ -37,6 +43,7 @@ void	ft_parse_c(char **format, va_list arguments, t_buffer *buf)
 			write(1, " ", 1);
 		while (am_zero--)
 			write(1, "0", 1);
-		write(1, &c, 1);
+		while (str_len--)
+			write(1, str++, 1);
 	}
 }
