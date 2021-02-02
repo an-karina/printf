@@ -27,13 +27,17 @@ static int		ft_offset(char *string)
 
 static int		ft_flag(char **format, t_buffer *buf)
 {
-	if (**format == '0' || **format == '-')
+	if (**format == 0)
 	{
-		if (**format == '-')
-			buf->minus = 1;
 		buf->zero = 1;
 		(*format)++;
 		return (1);
+	}
+	if (**format == '-')
+	{
+			buf->minus = 1;
+			(*format)++;
+			return (1);
 	}
 	return (0);
 }

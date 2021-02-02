@@ -19,5 +19,5 @@ void	ft_parse_type(char **format, va_list arguments, t_buffer *buf)
 		ft_parse_d(format, arguments, buf);
 		(*format)++;
 	}
-	
+	//if (buf->type == )
 }

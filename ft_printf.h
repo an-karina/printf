@@ -33,7 +33,7 @@ void	ft_initialize(t_buffer *buffer);
 void	ft_parsing(char **format, va_list arguments, t_buffer *buf);
 void	ft_parse_type(char **format, va_list arguments, t_buffer *buf);
 int		ft_num_len(long num);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(long n, int fd);
 void	ft_parse_d(char **format, va_list arguments, t_buffer *buf);
 int		ft_atoi(const char *str);
 char	*ft_strchr(const char *s, int c);
