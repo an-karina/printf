@@ -6,24 +6,31 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 15:29:21 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/02 14:01:43 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/03 15:08:09 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_parse_d(char **format, va_list arguments, t_buffer *buf)
+void	ft_parse_d_u(char **format, va_list arguments, t_buffer *buf)
 {
 	long num;
 	int len_num;
 	int	am_zero;
 	int am_space;
-	
-	num = (long)va_arg(arguments, int);
-	len_num =  ft_num_len((long)num);
+	if (**format == 'd' || **format == 'i')
+	{
+		num = (long)va_arg(arguments, int);
+		len_num =  ft_num_len((long)num);
+	}
+	if (**format == 'u')
+	{
+		num = (unsigned long)va_arg(arguments, unsigned int);
+		len_num =  ft_num_len((unsigned long)num);
+	}
 	am_zero = 0;
 	am_space = 0;
-	if (buf->width < 0 && buf->precision == 0)
+	if (buf->width < 0 && buf->precision == 0 && (num == 0))
 		return ;
 	if (num < 0)
 		buf->width--;

@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 14:50:27 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/02 20:14:48 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/03 15:20:43 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_parse_type(char **format, va_list arguments, t_buffer *buf)
 {
-	if (buf->type == 'd' || buf->type == 'i')
+	if (buf->type == 'd' || buf->type == 'i' || buf->type == 'u')
 	{
-		ft_parse_d(format, arguments, buf);
+		ft_parse_d_u(format, arguments, buf);
 		(*format)++;
 	}
 	if (buf->type == 'c')
@@ -34,9 +34,9 @@ void	ft_parse_type(char **format, va_list arguments, t_buffer *buf)
 		ft_parse_p(format, arguments, buf);
 		(*format)++;
 	}
-	if (buf->type == 'u')
+	if (buf->type == 'x' || buf->type == 'X')
 	{
-		ft_parse_u(format, arguments, buf);
+		ft_parse_x_X(format, arguments, buf);
 		(*format)++;
 	}
 }

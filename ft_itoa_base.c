@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 17:14:51 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/02 20:09:23 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/03 15:19:27 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int		num_len(unsigned long long n, int base)
 	return (i);
 }
 
-char			*ft_itoa_base(unsigned long long n, int base)
+char			*ft_itoa_base(char c, unsigned long long n, int base)
 {
 	int		len;
 	char	*p;
@@ -35,7 +35,7 @@ char			*ft_itoa_base(unsigned long long n, int base)
 
 	len = num_len((unsigned long long)n, base);
 	p = (char *)malloc(sizeof(char) * (len + 1));
-	ost = "0123456789abcdef";
+	ost = (c == 'x' || c == 'p') ? "0123456789abcdef" : "0123456789ABCDEF";
 	if (p)
 	{
 		p[len] = '\0';
