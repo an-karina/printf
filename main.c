@@ -73,6 +73,9 @@ int		main()
 
 	printf("|%X|\n", -15);
 	ft_printf("|%X|\n", -15);
+
+		printf("|%%|\n");
+	ft_printf("|%%|\n");
 	
 return (0);
 }

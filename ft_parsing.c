@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 18:22:09 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/02 13:57:06 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/04 19:13:25 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ void		ft_parsing(char **format, va_list arguments, t_buffer *buf)
 {
 	while (**format)
 	{
+		if (**format == '%')
+		{
+			write(1, "%", 1);
+			(*format)++;
+			break;
+		}
 		if (ft_flag(format, buf))
 			continue ;
 		if (ft_width(format, arguments, buf))

@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 18:22:03 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/03 15:06:58 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/04 16:45:36 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_information
 	long long	width;
 	long long	precision;
 	char		type;
-	
+	int 		length;
 }				t_buffer;
 
 int		ft_printf(const char *format, ...);
