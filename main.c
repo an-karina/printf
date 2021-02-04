@@ -74,15 +74,18 @@ int		main()
 	// printf("|%X|\n", -15);
 	// ft_printf("|%X|\n", -15);
 
-	//printf("|%-05%|\n");
-	//ft_printf("|%-05%|\n");
+	//printf("|%05%|\n");
+	//ft_printf("|%05%|\n");
 
 	// printf("%d\n", printf("helloworld\n"));
 	//int i = ft_printf("helloworld\n");
 	//printf("%d\n", i);
-	printf("%d\n", printf("hello, %s.", "gavin"));
-	int i;
-	i = printf("hello, %s.", "gavin");
-	printf("%d\n", i);
+	// printf("%d\n", printf("hello, %s.", "gavin"));
+	// int i;
+	// i = ft_printf("hello, %s.", "gavin");
+	// printf("%d\n", i);
+
+	printf("%5s", "goes over\n");
+	ft_printf("%5s", "goes over\n");
 return (0);
 }

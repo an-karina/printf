@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:27:53 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/04 19:32:44 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:45:49 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 		str_len = buf->precision;
 	if ((buf->width > 0) && (buf->zero) && !(buf->minus))
 		am_zero = buf->width - str_len;
-	if ((buf->width > 0) && !(buf->zero))
+	if ((buf->width > 0) && !(buf->zero) && (buf->width > str_len))
 		am_space = buf->width - str_len;
-	buf->length = str_len + am_space + am_zero;
+	buf->length += str_len + am_space + am_zero;
 	if (buf->minus)
 	{
 		while (str_len--)

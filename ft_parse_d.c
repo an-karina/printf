@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 15:29:21 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/04 19:28:37 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:37:13 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_parse_d_u(char **format, va_list arguments, t_buffer *buf)
 		am_zero = buf->width - len_num;
 	if ((buf->width > 0) && (buf->width > len_num) && (buf->precision < buf->width))
 		am_space = buf->width - len_num - am_zero;
-	buf->length = am_space + am_zero + len_num;
+	buf->length += am_space + am_zero + len_num;
 	if (buf->minus)
 	{
 		if (num < 0)
