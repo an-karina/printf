@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 14:50:27 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/03 15:20:43 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/04 20:59:27 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_parse_type(char **format, va_list arguments, t_buffer *buf)
 		ft_parse_d_u(format, arguments, buf);
 		(*format)++;
 	}
-	if (buf->type == 'c')
+	if (buf->type == 'c' || **format == '%')
 	{
 		ft_parse_c(format, arguments, buf);
 		(*format)++;

@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 03:35:25 by jhleena           #+#    #+#             */
-/*   Updated: 2021/01/30 15:29:02 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/04 20:50:34 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	ft_initialize(t_buffer *buffer)
 	buffer->width = -1;
 	buffer->precision = -1;
 	buffer->type = '\0';
+	buffer->length = 0;
 }

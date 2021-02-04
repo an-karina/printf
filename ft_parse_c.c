@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:02:24 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/04 19:30:37 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/04 21:12:31 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ void	ft_parse_c(char **format, va_list arguments, t_buffer *buf)
 	int	am_zero;
 	int am_space;
 	
-	c = va_arg(arguments, int);
+	if (**format == '%')
+		c = '%';
+	else 
+		c = va_arg(arguments, int);
 	am_zero = 0;
 	am_space = 0;
 	if (buf->zero && !buf->minus && (buf->width > 0))
 		am_zero = --buf->width;
-	if ((!buf->zero) && (buf->width > 0))
+	if ((!buf->zero || **format == '%') && (buf->width > 0))
 		am_space = --buf->width;
 	buf->length = am_zero + am_space + 1;
 	if (buf->minus)
