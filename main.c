@@ -76,6 +76,9 @@ int		main()
 
 		printf("|%%|\n");
 	ft_printf("|%%|\n");
-	
+
+	printf("%d\n", printf("helloworld\n"));
+	int i = ft_printf("helloworld\n");
+	printf("%d\n", i);
 return (0);
 }

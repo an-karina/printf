@@ -5,7 +5,7 @@ SRC		= $(SRCDIR)ft_atoi.c $(SRCDIR)ft_initialize.c $(SRCDIR)ft_itoa_base.c $(SRC
 
 OBJ		= $(patsubst $(SRCDIR)%.c, $(OBJDIR)%.o, $(SRC))
 CC		= gcc
-CFLAGS	= 
+CFLAGS	=  
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	$(CC) $(CFLAGS) -c $< -o $@
