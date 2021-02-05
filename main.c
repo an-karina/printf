@@ -87,7 +87,7 @@ int		main()
 	// printf("%.s", "goes over\n");
 	// ft_printf("%.s", "goes over\n\n");
 
-	printf("hello, %s.\n", NULL);
-	ft_printf("hello, %s.\n\n", NULL);
+	printf("hello, %32s.\n", NULL);
+	ft_printf("hello, %32s.\n\n", NULL);
 return (0);
 }
