@@ -105,8 +105,17 @@ int		main()
 	// printf("|%10.s|\n", NULL);
 	// ft_printf("|%10.s|\n\n", NULL);
 
-	printf("|%-3.s|\n", NULL);
-	ft_printf("|%-3.s|\n\n", NULL);
+	// printf("|%-3.s|\n", NULL);
+	// ft_printf("|%-3.s|\n\n", NULL);
+
+	// printf("|%3.1s|", NULL);
+	// ft_printf("|%3.1s|", NULL));
+
+	// printf("|%-3.1s|\n", "(null)");
+	// ft_printf("|%-3.1s|\n\n", NULL);
+	printf("|%s|\n", NULL);
+	printf("|%s|\n\n", NULL);
+
 
 return (0);
 }

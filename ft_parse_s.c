@@ -55,7 +55,7 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 		while (am_zero--)
 			write(1, "0", 1);
 		if (!str && (buf->precision != 0))
-			write(1, "(null)", str_len);
+			write(1, "(null)", str_len - 1);
 		while (str_len--)
 			write(1, str++, 1);
 	}
