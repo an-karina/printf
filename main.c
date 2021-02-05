@@ -87,7 +87,26 @@ int		main()
 	// printf("%.s", "goes over\n");
 	// ft_printf("%.s", "goes over\n\n");
 
-	printf("hello, %32s.\n", NULL);
-	ft_printf("hello, %32s.\n\n", NULL);
+	// printf("hello, %32s.\n", NULL);
+	// ft_printf("hello, %32s.\n\n", NULL);
+
+	// printf("|%-32s|\n", NULL);
+	// ft_printf("|%-32s|\n\n", NULL);
+
+	// printf("|%-16s|\n", NULL);
+	// ft_printf("|%-16s|\n\n", NULL);
+
+	// printf("|%.03s|\n\n", "(null)");//UNDEFINED???
+	// ft_printf("|%.03s|\n\n", NULL);
+
+	// printf("|%10.1s|\n\n", "(null)");
+	// ft_printf("|%10.1s|\n\n", NULL);
+
+	// printf("|%10.s|\n", NULL);
+	// ft_printf("|%10.s|\n\n", NULL);
+
+	printf("|%-3.s|\n", NULL);
+	ft_printf("|%-3.s|\n\n", NULL);
+
 return (0);
 }

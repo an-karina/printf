@@ -18,6 +18,7 @@
 #include <stdlib.h>
 
 #define TYPE "cspdiuxX"
+//#define NOTHING "(null)"
 
 typedef struct	s_information
 {
