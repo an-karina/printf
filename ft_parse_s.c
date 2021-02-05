@@ -24,7 +24,7 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 	am_zero = 0;
 	am_space = 0;
 	str_len = ft_strlen(str);
-	if ((buf->precision > 0) && (buf->precision < str_len))
+	if ((buf->precision >= 0) && (buf->precision < str_len))
 		str_len = buf->precision;
 	if ((buf->width > 0) && (buf->zero) && !(buf->minus))
 		am_zero = buf->width - str_len;
