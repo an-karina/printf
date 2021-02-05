@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 14:30:10 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/05 17:01:08 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/05 17:21:43 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ void	ft_parse_x_X(char **format, va_list arguments, t_buffer *buf)
 	{
 		while (am_zero--)
 			write(1, "0", 1);
-		write(1, s, str_len);
+		if (buf->precision != 0)
+			write(1, s, str_len);
+		else 
+			am_space ++;
 		while (am_space--)
 			write(1, " ", 1);
 	}
@@ -48,6 +51,9 @@ void	ft_parse_x_X(char **format, va_list arguments, t_buffer *buf)
 			write(1, " ", 1);
 		while (am_zero--)
 			write(1, "0", 1);
-		write(1, s, str_len);
+		if (buf->precision != 0)
+			write(1, s, str_len);
+		else
+			write(1, " ", 1);
 	}
 }

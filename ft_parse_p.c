@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 17:08:01 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/04 21:37:03 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/05 17:29:31 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ void	ft_parse_p(char **format, va_list arguments, t_buffer *buf)
 	char *s;
 	
 	num = (unsigned long long)va_arg(arguments, void*);
+	//printf("%llu\n", num);
 	s = ft_itoa_base(**format, num, 16);
 	str_len = ft_strlen(s);
 	am_space = 0;
-	if (buf->width > 0)
+	if (buf->width > 0 && (buf->width > str_len + 2))
 		am_space = buf->width - str_len - 2;
 	buf->length += am_space + str_len + 2;
 	if (buf->minus)

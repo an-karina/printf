@@ -132,8 +132,13 @@ int		main()
 	// printf("|%03x|\n", 698334);
 	// ft_printf("|%03x|\n", 698334);
 
-	printf("|%.4x|\n", 0);
-	ft_printf("|%.4x|\n\n", 0);
+	// printf("|%.4x|\n", 0);
+	// ft_printf("|%.4x|\n\n", 0);
 
+	// printf("|%3.0x|\n", 0);
+	// ft_printf("|%3.0x|\n\n", 0);
+
+	printf("|%2p|\n", NULL);
+	ft_printf("|%2p|\n", NULL);
 return (0);
 }
