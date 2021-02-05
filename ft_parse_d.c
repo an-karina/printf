@@ -30,8 +30,8 @@ void	ft_parse_d_u(char **format, va_list arguments, t_buffer *buf)
 	}
 	am_zero = 0;
 	am_space = 0;
-	if (buf->width < 0 && buf->precision == 0 && (num == 0))
-		return ;
+	if (buf->precision == 0 && (num == 0))
+		len_num = 0;
 	if (num < 0)
 		buf->width--;
 	if ((buf->precision >= 0) && (buf->precision > len_num))
@@ -51,7 +51,8 @@ void	ft_parse_d_u(char **format, va_list arguments, t_buffer *buf)
 		}
 		while (am_zero--)
 			write(1, "0", 1);
-		ft_putnbr_fd(num, 1);
+		if (len_num)
+			ft_putnbr_fd(num, 1);
 		while (am_space--)
 			write(1, " ", 1);
 	}
@@ -67,6 +68,7 @@ void	ft_parse_d_u(char **format, va_list arguments, t_buffer *buf)
 		}
 		while (am_zero--)
 			write(1, "0", 1);
-		ft_putnbr_fd(num, 1);
+		if (len_num)
+			ft_putnbr_fd(num, 1);
 	}
 }
