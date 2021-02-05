@@ -62,8 +62,8 @@ int		main()
 	// printf("|%-25p|\n", &p);
 	// ft_printf("|%-25p|\n\n", &p);
 
-	// printf("|%s|\n", "\0");
-	// ft_printf("|%s|\n\n", "\0");
+	// printf("|%s|\n", NULL);
+	// ft_printf("|%s|\n\n", NULL);
 
 	// printf("|%s|\n", "a");
 	// ft_printf("|%s|\n\n", "a");
@@ -138,7 +138,8 @@ int		main()
 	// printf("|%3.0x|\n", 0);
 	// ft_printf("|%3.0x|\n\n", 0);
 
-	printf("|%2p|\n", NULL);
-	ft_printf("|%2p|\n", NULL);
+	// printf("|%2.9p|\n", NULL);
+	int r00 = 0;
+	ft_printf(", %d%% des gens qui parlent à Ly adorent %s. Ou Presque. %p", 100, "Ly", &r00);
 return (0);
 }
