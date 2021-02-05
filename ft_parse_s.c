@@ -34,7 +34,7 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 	if ((buf->width > 0) && !(buf->zero) && (buf->width > str_len))
 		am_space = buf->width - str_len;
 	buf->length += str_len + am_space + am_zero;
-	am_space = (!str && buf->width >= 6) ? am_space - 6 : am_space;
+	//am_space = (!str && buf->width >= 6) ? am_space - 6 : am_space;
 	// printf("%d\n", str_len);
 	// printf("%d\n", am_space);
 	// printf("%d\n", am_zero);
