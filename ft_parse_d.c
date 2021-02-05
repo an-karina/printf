@@ -36,7 +36,7 @@ void	ft_parse_d_u(char **format, va_list arguments, t_buffer *buf)
 		buf->width--;
 	if ((buf->precision >= 0) && (buf->precision > len_num))
 		am_zero = buf->precision - len_num;
-	if ((buf->precision < 0) && !buf->minus && buf->zero)
+	if ((buf->precision < 0) && !buf->minus && buf->zero && (buf->width > len_num))
 		am_zero = buf->width - len_num;
 	if ((buf->width > 0) && (buf->width > len_num) && (buf->precision < buf->width))
 		am_space = buf->width - len_num - am_zero;

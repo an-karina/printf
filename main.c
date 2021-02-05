@@ -108,14 +108,26 @@ int		main()
 	// printf("|%-3.s|\n", NULL);
 	// ft_printf("|%-3.s|\n\n", NULL);
 
-	// printf("|%3.1s|", NULL);
-	// ft_printf("|%3.1s|", NULL));
+	// printf("|%3.1s|\n", NULL);
+	// ft_printf("|%3.1s|\n", NULL);
 
 	// printf("|%-3.1s|\n", "(null)");
 	// ft_printf("|%-3.1s|\n\n", NULL);
-	printf("|%s|\n", NULL);
-	printf("|%s|\n\n", NULL);
 
+	// printf("|%s|\n", NULL);
+	// ft_printf("|%s|\n\n", NULL);
+
+	// printf("|%02s|\n", NULL);
+	// ft_printf("|%02s|\n", NULL);
+
+	// printf("%%0i 42 == |%0i|\n", 42);
+	// ft_printf("%%0i 42 == |%0i|\n\n", 42);
+
+	// printf("%%0d 0000042 == |%0d|\n", 0000042);
+	// ft_printf("%%0d 0000042 == |%0d|\n\n", 0000042);
+
+	// printf("%%0d 0000042 == |%0d|\n", 0000042);
+	// ft_printf("%%0d 0000042 == |%0d|\n\n", 0000042);
 
 return (0);
 }
