@@ -74,8 +74,8 @@ int		main()
 	// printf("|%X|\n", -15);
 	// ft_printf("|%X|\n", -15);
 
-	printf("|%05%|\n");
-	ft_printf("|%05%|\n");
+	// printf("|%05%|\n");
+	// ft_printf("|%05%|\n");
 
 	// printf("%d\n", printf("helloworld\n"));
 	// int i = ft_printf("helloworld\n");
@@ -128,6 +128,12 @@ int		main()
 
 	// printf("|%-5.0i|\n", 0);
 	// ft_printf("|%-5.0i|\n\n", 0);
+
+	// printf("|%03x|\n", 698334);
+	// ft_printf("|%03x|\n", 698334);
+
+	printf("|%.4x|\n", 0);
+	ft_printf("|%.4x|\n\n", 0);
 
 return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:27:53 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/04 21:45:49 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/05 16:16:12 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 	if (buf->minus)
 	{
 		if (!str && (buf->precision != 0))
+		{
 			write(1, "(null)", str_len);
+			//str_len = 0;
+		}
 		while (str_len--)
 			write(1, str++, 1);
 		while (am_space--)
@@ -55,7 +58,10 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 		while (am_zero--)
 			write(1, "0", 1);
 		if (!str && (buf->precision != 0))
+		{
 			write(1, "(null)", str_len);
+			//str_len = 0;
+		}
 		while (str_len--)
 			write(1, str++, 1);
 	}
