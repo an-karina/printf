@@ -21,6 +21,12 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 	int am_symb;
 	
 	str = va_arg(arguments, char *);
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		buf->length+=6;
+		return ;
+	}
 	am_zero = 0;
 	am_space = 0;
 	str_len = ft_strlen(str);

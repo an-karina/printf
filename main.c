@@ -85,6 +85,9 @@ int		main()
 	// printf("%d\n", i);
 
 	// printf("%.s", "goes over\n");
-	// ft_printf("%.s", "goes over\n");
+	// ft_printf("%.s", "goes over\n\n");
+
+	printf("hello, %s.\n", NULL);
+	ft_printf("hello, %s.\n\n", NULL);
 return (0);
 }
