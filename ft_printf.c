@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 18:22:16 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/05 18:13:36 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/06 14:16:07 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ int		ft_printf(const char *format, ...)
 	
 	str = (char *)format;
 	va_start(arguments, format);
-	ft_initialize(&buf);
+	buf.length = 0;
 	while (*str)
 	{
 		if (*str == '%')
 		{
+			ft_initialize(&buf);
 			str++;
 			ft_parsing(&str, arguments, &buf);
+			
 		}
 		else
 		{
