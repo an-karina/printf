@@ -142,10 +142,10 @@ int		main()
 	// ft_printf("|%3.x|\n\n", 1);
 
 	// printf("|%2.9p|\n", NULL);
-	int r00 = 0;
+	// int r00 = 0;
 	// //ft_printf(", %d%% des gens qui parlent à Ly adorent %s. Ou Presque. %p", 100, "Ly", &r00);
-	printf("%.p\n", &r00);
-	ft_printf("%.p\n", &r00);
+	// printf("%.p\n", &r00);
+	// ft_printf("%.p\n", &r00);
 	// printf("p22 %.0x\n", 100);
 	// ft_printf("p22 %.0x\n", 100);
 

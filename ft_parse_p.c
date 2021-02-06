@@ -6,7 +6,7 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 17:08:01 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/05 18:04:30 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/06 14:22:36 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_parse_p(char **format, va_list arguments, t_buffer *buf)
 	char *s;
 	
 	num = (unsigned long long)va_arg(arguments, void*);
-	//printf("%llu\n", num);
 	s = ft_itoa_base(**format, num, 16);
 	str_len = ft_strlen(s) * (num != 0 || buf->precision != 0);
 	am_space = 0;
@@ -30,13 +29,7 @@ void	ft_parse_p(char **format, va_list arguments, t_buffer *buf)
 	if (buf->minus)
 	{
 		write(1, "0x", 2);
-		if (buf->precision != 0)
-		{
-			write(1, s, str_len);
-			// buf->length += str_len;
-		}
-		// else
-		// 	buf->length--;
+		write(1, s, str_len);
 		while (am_space--)
 			write(1, " ", 1);
 	}
@@ -45,12 +38,6 @@ void	ft_parse_p(char **format, va_list arguments, t_buffer *buf)
 		while (am_space--)
 			write(1, " ", 1);
 		write(1, "0x", 2);
-		if (buf->precision != 0)
-		{
-			write(1, s, str_len);
-			// buf->length += str_len;
-		}
-		// else
-		// 	buf->length--;
+		write(1, s, str_len);
 	}
 }
