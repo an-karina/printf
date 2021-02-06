@@ -6,13 +6,13 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:40:30 by jhleena           #+#    #+#             */
-/*   Updated: 2020/11/11 14:43:58 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/06 17:36:34 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t		ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t len;
 

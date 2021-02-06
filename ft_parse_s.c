@@ -6,48 +6,47 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:27:53 by jhleena           #+#    #+#             */
-/*   Updated: 2021/02/05 16:16:12 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/06 17:13:16 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
+static void		ft_write_null_str(int precision, char *str, int str_len)
 {
-	char *str;
-	int	str_len;
-	int	am_zero;
-	int am_space;
-	int am_symb;
-	
-	str = va_arg(arguments, char *);
-	if (!str)
-		str_len = 6;
-	else
-	str_len = ft_strlen(str);
-	am_zero = 0;
-	am_space = 0;
-	if ((buf->precision >= 0) && (buf->precision <= str_len))
-		str_len = buf->precision;
-	if ((buf->width > 0) && (buf->zero) && !(buf->minus) && (buf->width > str_len))
-		am_zero = buf->width - str_len;
-	if ((buf->width > 0) && !(buf->zero) && (buf->width > str_len))
-		am_space = buf->width - str_len;
-	buf->length += str_len + am_space + am_zero;
-	//am_space = (!str && buf->width >= 6) ? am_space - 6 : am_space;
-	// printf("%d\n", str_len);
-	// printf("%d\n", am_space);
-	// printf("%d\n", am_zero);
+	if (!str && (precision != 0))
+		write(1, "(null)", str_len);
+	while ((str_len)--)
+		write(1, str++, 1);
+}
 
+static void		ft_init_var(t_buffer *buf, int *zero, int *space, int *str_len)
+{
+	*zero = 0;
+	*space = 0;
+	buf->zero = (buf->minus == 1) ? 0 : buf->zero;
+	if ((buf->precision >= 0) && (buf->precision <= *str_len))
+		*str_len = buf->precision;
+	if ((buf->width > 0) && (buf->zero) && (buf->width > *str_len))
+		*zero = buf->width - *str_len;
+	if ((buf->width > 0) && !(buf->zero) && (buf->width > *str_len))
+		*space = buf->width - *str_len;
+	buf->length += *str_len + *space + *zero;
+}
+
+void			ft_parse_s(char **format, va_list arguments, t_buffer *buf)
+{
+	char	*str;
+	int		str_len;
+	int		am_zero;
+	int		am_space;
+
+	str = va_arg(arguments, char *);
+	str_len = (!str) ? (6) : (ft_strlen(str));
+	ft_init_var(buf, &am_zero, &am_space, &str_len);
 	if (buf->minus)
 	{
-		if (!str && (buf->precision != 0))
-		{
-			write(1, "(null)", str_len);
-			//str_len = 0;
-		}
-		while (str_len--)
-			write(1, str++, 1);
+		ft_write_null_str(buf->precision, str, str_len);
 		while (am_space--)
 			write(1, " ", 1);
 	}
@@ -57,12 +56,6 @@ void	ft_parse_s(char **format, va_list arguments, t_buffer *buf)
 			write(1, " ", 1);
 		while (am_zero--)
 			write(1, "0", 1);
-		if (!str && (buf->precision != 0))
-		{
-			write(1, "(null)", str_len);
-			//str_len = 0;
-		}
-		while (str_len--)
-			write(1, str++, 1);
+		ft_write_null_str(buf->precision, str, str_len);
 	}
 }
