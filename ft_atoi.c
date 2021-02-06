@@ -6,11 +6,9 @@
 /*   By: jhleena <jhleena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 13:04:25 by jhleena           #+#    #+#             */
-/*   Updated: 2020/11/06 17:59:23 by jhleena          ###   ########.fr       */
+/*   Updated: 2021/02/06 14:25:07 by jhleena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include "libft.h"
 
 int		ft_atoi(const char *str)
 {
